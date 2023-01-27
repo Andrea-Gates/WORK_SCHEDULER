@@ -1,3 +1,9 @@
+let displayDate = document.getElementById("currentDay");
+let currentDay = moment().format("DDDD");
+let currentHour = moment().format("HH");
+let NowMoment = moment().format("MMMM dd YYYY");
+
+
 $(document).ready(function () {
     //Moment.js code for current date and time
     let NowMoment = moment().format("MMMM Do YYYY");
