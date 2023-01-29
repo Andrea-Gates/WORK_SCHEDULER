@@ -1,3 +1,11 @@
+:root {
+  --blue:#264888;
+  --red:#691829;
+  --green:#677a7a;
+  --yellow:#d1ae72;
+  --grey:#283838;
+}
+
 body {
   background-image: url("../assets/images/Nihonga.jpg");
   font-family: "Open Sans", sans-serif;
@@ -13,7 +21,7 @@ textarea {
   background: white;
   border: none;
   resize: none;
-  color: rgb(82, 82, 82);
+  color:var(--grey)
   border-left: 1px solid rgb(82, 82, 82);
   padding: 10px;
   letter-spacing: 1px;
@@ -22,12 +30,12 @@ textarea {
 .jumbotron {
   border-color: transparent;
   text-align: center;
-  color: red;
+  color:var(--red);
   border-radius: 0;
   padding-top: 30px;
   padding-bottom: 20px;
   margin-bottom: 0px;
-  border-bottom: 10px solid hsl(215, 93%, 30%);
+  border-bottom: 10px solid var(--blue));
 }
 
 #clearFieldsBtn {
@@ -51,8 +59,8 @@ textarea {
 }
 
 .hour {
-  background-color: #ffeaa7;
-  color: rgb(82, 82, 82);
+  background-color:moccasin;
+  color:var(--grey);
   padding-top: 27px;
   padding-left: 10px;
   font-size: 25px;
@@ -60,27 +68,27 @@ textarea {
 }
 
 .past {
-  background-color: #575b5c;
+  background-color:var(--grey);
   border-radius: 15px;
   color: white;
 }
 
 .present {
-  background-color: #ffeaa7;
+  background-color:var(--yellow);
 
   border-radius: 15px;
 }
 
 .future {
-  background-color: #55efc4;
+  background-color:var(--green);
   border-radius: 15px;
 }
 
 .saveBtn {
-  border-left: 1px solid rgb(82, 82, 82);
+  border-left: 1px solid var(--grey);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #056b93;
+  background-color: var(--red);
   color: white;
 }
 
@@ -90,7 +98,7 @@ textarea {
 }
 
 .saveBtn i:after{
-  background-color: #575b5c;
+  background-color: var(--grey);
 
 }
 .white-text {
@@ -142,17 +150,17 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color:var(--blue);
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: var(--red);
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color:var(--yellow);
   color: white;
 }
 
@@ -160,7 +168,7 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color:var(--red));
   color: white;
 }
 
