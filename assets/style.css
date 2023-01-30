@@ -44,14 +44,18 @@ textarea {
 
 .time-block {
   text-align: center;
+  justify-content: center;
+  white-space: pre-wrap;
+  height: 80px;
+  border-bottom: dashed;
 }
 
-.row {
+/* .row {
   white-space: pre-wrap;
   height: 80px;
   border-bottom: dashed;
   /* border-top: 1px solid white; */
-}
+
 
 .hour {
   padding-top: 27px;
@@ -75,7 +79,7 @@ textarea {
 
 .future {
   background-color:var(--yellow);
-  color: white;
+  color:black;
 }
 
 .saveBtn {
