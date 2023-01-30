@@ -21,26 +21,20 @@ textarea {
   background: white;
   border: none;
   resize: none;
-  color:var(--grey)
+  color:grey
   border-left: 1px solid rgb(82, 82, 82);
   padding: 10px;
   letter-spacing: 1px;
 }
 
 .jumbotron {
-  border-color: transparent;
   text-align: center;
-  color:var(--red);
+  background-color:transparent;
+  color:white;
   border-radius: 0;
   padding-top: 30px;
   padding-bottom: 20px;
-  margin-bottom: 0px;
-  border-bottom: 10px solid var(--blue));
-}
-
-#clearFieldsBtn {
-  margin-top: 10px;
-  align-content: center;
+  margin-bottom: 10px;
 }
 
 .description {
@@ -55,98 +49,18 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  border-bottom: dashed;
+  /* border-top: 1px solid white; */
 }
 
 .hour {
-  background-color:moccasin;
-  color:var(--grey);
   padding-top: 27px;
   padding-left: 10px;
   font-size: 25px;
   font-weight: 500;
-}
-
-.past {
-  background-color:var(--grey);
-  border-radius: 15px;
-  color: white;
-}
-
-.present {
-  background-color:var(--yellow);
-
-  border-radius: 15px;
-}
-
-.future {
-  background-color:var(--green);
-  border-radius: 15px;
-}
-
-.saveBtn {
-  border-left: 1px solid var(--grey);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: var(--red);
-  color: white;
-}
-
-.saveBtn i:hover {
-  font-size: 30px;
-  transition: all 0.2s ease-in-out;
-}
-
-.saveBtn i:after{
-  background-color: var(--grey);
-
-}
-.white-text {
-  color: white;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
-}
-
-textarea {
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
-
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color:white;
-  border-radius: 0;
-  border-bottom: 10px solid black;
-}
-
-.description {
-  white-space: pre-wrap;
-}
-
-.time-block {
-  text-align: center;
-  border-radius: 15px;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
-}
-
-.hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border-right: 1px solid #000000;
 }
 
 .past {
@@ -168,12 +82,20 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color:var(--red));
+  background-color:var(--red);
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+#clearFieldsBtn {
+  margin-top: 20px;
+  align-content: center;
+  margin-left: 45%;
+  text-align: center;
+  background-color:var(--red);
 }
 
