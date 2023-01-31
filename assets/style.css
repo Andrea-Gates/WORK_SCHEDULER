@@ -40,6 +40,8 @@ textarea {
 .description {
   white-space: pre-wrap;
   font-weight: 600;
+  justify-content: center;
+  margin-left: 45%;
 }
 
 .time-block {
@@ -47,15 +49,13 @@ textarea {
   justify-content: center;
   white-space: pre-wrap;
   height: 80px;
+  width:80px;
   border-bottom: dashed;
 }
 
-/* .row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-bottom: dashed;
-  /* border-top: 1px solid white; */
-
+.placeholder {
+  text-align: center;
+}
 
 .hour {
   padding-top: 27px;
@@ -90,15 +90,15 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn :hover {
+  background-color:var(--green);
   transition: all 0.3s ease-in-out;
 }
 
 #clearFieldsBtn {
   margin-top: 20px;
   align-content: center;
-  margin-left: 45%;
+  margin-left: 48%;
   text-align: center;
   background-color:var(--red);
 }

@@ -1,23 +1,39 @@
-let currentHour = moment().hour();
+let currentTime = moment().hour();
 let twentyFourHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 document.querySelector("#currentDay").textContent = moment().format("dddd, MMMM Do YYYY");
-document.querySelector("#currentHour").textcontent = moment().format("HH");
 
-for (let i = 0; i < 9; i++) {
-  if (currentHour === twentyFourHour[i]) {
-    console.log(i);
-    document.getElementById(i).classList.add("present");
-  }
-  if (currentHour > twentyFourHour[i]) {
-    console.log(i);
-    document.getElementById(i).classList.add("past");
-  }
-  if (currentHour < twentyFourHour[i]) {
-    console.log(i);
-    document.getElementById(i).classList.add("future");
-  }
-}
+document.querySelector("#currentTime").textcontent = moment().format("HH");
+
+// loops through time blocks and compares the id value (hour) with the hour of the current time 
+
+function timeComparison () {   
+  $.each(allHours, function (i) {
+  let hourId = parseInt($(this).attr("id"));
+  if (hourId === currentTime) {
+    $(this).next().addClass("present");
+   } else if (hourId < currentTime) {
+         $(this).next().addClass("past");
+       } else if (hourId > currentTime) {
+         $(this).next().addClass("future");
+       }
+     });
+ }
+ 
+// function timeComparison(){
+//   for (let i = 0; i < 9; i++) {
+//   if (currentHour === twentyFourHour[i]) {
+//   console.log(i);
+//   document.getElementById(i).classList.add("present");
+//   }
+//   else if (currentHour > twentyFourHour[i]) {
+//   console.log(i);
+//   document.getElementById(i).classList.add("past");
+//   }
+//   else (currentHour < twentyFourHour[i]{    console.log(i);
+//   document.getElementById(i).classList.add("future");
+//   }
+//  }
 
 // Get sceduled item from local storage, if any
  $("#hour09 .description").val(localStorage.getItem("09"));
