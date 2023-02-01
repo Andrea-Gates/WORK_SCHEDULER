@@ -23,6 +23,12 @@ $.each(allHours, function () {
   }
 });
 }
+//Save entry to local storage
+function saveToLocal(obj) {
+  let text = item.value;
+  let id = item.id;
+  localStorage.setItem(id, text);
+}
 
 // Get sceduled item from local storage, if any
  $("#hour09 .description").val(localStorage.getItem("09"));
