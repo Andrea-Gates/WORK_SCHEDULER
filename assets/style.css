@@ -21,9 +21,7 @@ textarea {
   background: white;
   border: none;
   resize: none;
-  color:grey
-  border-left: 1px solid rgb(82, 82, 82);
-  padding: 10px;
+  color:grey;
   letter-spacing: 1px;
 }
 
@@ -67,17 +65,17 @@ textarea {
   border-right: 1px solid #000000;
 }
 
-.past {
+.input-group-text.past {
   background-color:var(--blue);
   color: white;
 }
 
-.present {
+.input-group-text.present {
   background-color: var(--red);
   color: white;
 }
 
-.future {
+.input-group-text.future {
   background-color:var(--yellow);
   color:black;
 }

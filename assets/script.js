@@ -1,39 +1,28 @@
-let currentTime = moment().hour();
-let twentyFourHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+let currentTime = moment();
+let allHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 document.querySelector("#currentDay").textContent = moment().format("dddd, MMMM Do YYYY");
-
 document.querySelector("#currentTime").textcontent = moment().format("HH");
 
-// loops through time blocks and compares the id value (hour) with the hour of the current time 
+// Select all hour-ids equal to the hours in allHours array and saves them in $timeBlock. Check if current time matches the hour in the hourMoment object and add a class to the next element of $timeBlock. The class "present" is added if the current time matches the hour, "past" is added if the current time is before the hour and "future" is added if the current time is after the hour.
 
-function timeComparison () {   
-  $.each(allHours, function (i) {
-  let hourId = parseInt($(this).attr("id"));
-  if (hourId === currentTime) {
-    $(this).next().addClass("present");
-   } else if (hourId < currentTime) {
-         $(this).next().addClass("past");
-       } else if (hourId > currentTime) {
-         $(this).next().addClass("future");
-       }
-     });
- }
- 
-// function timeComparison(){
-//   for (let i = 0; i < 9; i++) {
-//   if (currentHour === twentyFourHour[i]) {
-//   console.log(i);
-//   document.getElementById(i).classList.add("present");
-//   }
-//   else if (currentHour > twentyFourHour[i]) {
-//   console.log(i);
-//   document.getElementById(i).classList.add("past");
-//   }
-//   else (currentHour < twentyFourHour[i]{    console.log(i);
-//   document.getElementById(i).classList.add("future");
-//   }
-//  }
+function timeComparison() {
+
+  let currentTime = moment().hour();
+
+$.each(allHours, function () {
+  let hourId = parseInt(this);
+  let hourMoment = moment().hour(hourId);
+  let $timeBlock = $(`[hour-id=${hourId}]`);
+  if (hourMoment.isSame(currentTime, 'hour')) {
+    $timeBlock.next().addClass("present");
+  } else if (hourMoment.isBefore(currentTime, 'hour')) {
+    $timeBlock.next().addClass("past");
+  } else if (hourMoment.isAfter(currentTime, 'hour')) {
+    $timeBlock.next().addClass("future");
+  }
+});
+}
 
 // Get sceduled item from local storage, if any
  $("#hour09 .description").val(localStorage.getItem("09"));
