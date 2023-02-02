@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("/assets/images/Nihonga.jpg");
+  background-image: url("../assets/Nihonga.jpg");
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
