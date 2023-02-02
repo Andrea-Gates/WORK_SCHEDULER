@@ -8,7 +8,8 @@ Tasks entered into the time blocks would be saved by each block's save button (a
 
 At the bottom I included a clear-fields button, which would do just that, unilaterally.
 
-Features
+Features:
+
 Display of current day at the top of the calender when a user opens the planner.
 
 Timeblocks for standard business hours when the user scrolls down.
