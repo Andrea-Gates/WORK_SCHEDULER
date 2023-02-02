@@ -1,8 +1,8 @@
 let currentTime = moment();
 let allHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-$('#currentDay').textContent = moment().format('dddd, MMMM Do YYYY');
-$('#currentTime').textcontent = moment().format('HH');
+$('#currentDay).text(moment().format('dddd, MMMM Do YYYY'));
+$('#currentTime').text(moment().format('HH'));
 
 // Get sceduled item from local storage, if any
 // here we are doing a loop through JSON object in the storage.
