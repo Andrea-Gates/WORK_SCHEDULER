@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("../assets/images/Nihonga.jpg");
+  background-image: url("../assets/Nihonga.jpg");
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -65,17 +65,16 @@ textarea {
   border-right: 1px solid #000000;
 }
 
-.input-group-text.past {
+.past {
   background-color:var(--blue);
   color: white;
 }
-
-.input-group-text.present {
+.present {
   background-color: var(--red);
   color: white;
 }
 
-.input-group-text.future {
+.future {
   background-color:var(--yellow);
   color:black;
 }
