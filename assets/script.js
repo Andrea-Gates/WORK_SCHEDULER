@@ -6,7 +6,7 @@ $('#currentTime').text(moment().format('HH'));
 
 // Get sceduled item from local storage, if any
 // here we are doing a loop through JSON object in the storage.
-for (i = 0; i < allHours.lenght; i++) {
+for (i = 0; i < allHours.length; i++) {
   let userTasks = localStorage.getItem(JSON.parse('userTasks')) || [];
   $(`.time-block['data-time=${i}"`).val(userTasks.task);
 }
