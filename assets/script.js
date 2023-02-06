@@ -93,4 +93,5 @@ $("#clearFieldsBtn").click(function (event) {
 //         event.preventDefault;
 //         $("textarea").val("");
 //         localStorage.clear();
+
 //  )
