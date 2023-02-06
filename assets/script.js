@@ -12,10 +12,15 @@ for (i = 0; i < allHours.lenght; i++) {
 }
 
 // Select all hour-ids equal to the hours in allHours array and saves them in $timeBlock. Check if current time matches the hour in the hourMoment object and add a class to the next element of $timeBlock. The class "present" is added if the current time matches the hour, "past" is added if the current time is before the hour and "future" is added if the current time is after the hour.
+let currentHour = moment().format("HH");
+
 function timeComparison() {
   $(".input-group").each(function () {
     let timeBlockHour = parseInt($(this).find(".time-block").attr("hour-id"));
     // Set background color for past, present, and future time blocks
+    console.log("timeblockhour ", timeBlockHour)
+    console.log("currenthour ",currentHour)
+    
     let textarea = $(this).find("textarea");
     if (timeBlockHour < currentHour) {
       textarea.removeClass("present future").addClass("past");
@@ -26,6 +31,7 @@ function timeComparison() {
     }
   });
 }
+timeComparison ();
 
 // delegate event to the parent to get each button to trigger event
 $(".container").on("click", ".saveBtn", function (event) {
