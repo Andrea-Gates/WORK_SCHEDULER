@@ -11,7 +11,8 @@ for (i = 0; i < allHours.lenght; i++) {
   $(`".time-block['data-time=${i}"`).val(userTasks.task);
 }
 
-// Select all hour-ids equal to the hours in allHours array and saves them in $timeBlock. Check if current time matches the hour in the hourMoment object and add a class to the next element of $timeBlock. The class "present" is added if the current time matches the hour, "past" is added if the current time is before the hour and "future" is added if the current time is after the hour.
+// Check if current time matches the hour in the hourMoment object and add a class to the next element of $timeBlock.
+
 let currentHour = moment().format("HH");
 
 function timeComparison() {
@@ -32,6 +33,27 @@ function timeComparison() {
   });
 }
 timeComparison();
+
+// let now = moment();
+// let currentHour = now.hour();
+
+// let timeSlots = [
+//   { start_time: "10:00", color: "" },
+//   { start_time: "12:00", color: "" },
+//   { start_time: "14:00", color: "" },
+//   { start_time: "16:00", color: "" },
+// ];
+
+// for (let i = 0; i < timeSlots.length; i++) {
+//   let slotHour = moment(timeSlots[i].start_time, "HH:mm").hour();
+//   if ((slotHour = currentHour)) {
+//     timeSlots[i].color = "present";
+//   } else if (slotHour > currentHour) {
+//     timeSlots[i].color = "future";
+//   } else {
+//     timeSlots[i].color = "past";
+//   }
+// }
 
 // change the icon of the save button from a circle to a check mark when the user saves an event to the local storage
 const saveBtns = document.querySelectorAll(".saveBtn");
