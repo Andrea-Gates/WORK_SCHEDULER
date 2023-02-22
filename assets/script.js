@@ -18,9 +18,9 @@ function timeComparison() {
   $(".input-group").each(function () {
     let timeBlockHour = parseInt($(this).find(".time-block").attr("hour-id"));
     // Set background color for past, present, and future time blocks
-    console.log("timeblockhour ", timeBlockHour)
-    console.log("currenthour ",currentHour)
-    
+    console.log("timeblockhour ", timeBlockHour);
+    console.log("currenthour ", currentHour);
+
     let textarea = $(this).find("textarea");
     if (timeBlockHour < currentHour) {
       textarea.removeClass("present future").addClass("past");
@@ -31,73 +31,56 @@ function timeComparison() {
     }
   });
 }
-timeComparison ();
+timeComparison();
 
-// delegate event to the parent to get each button to trigger event
-$(".container").on("click", ".saveBtn", function (event) {
-  let inputGroupID = event.target.attr('data-time');
-  let time = $(`".time-block['data-time=${inputGroupID}"`);
-  let userInput = $(`textarea["data-time=${inputGroupID}"]`).val();
+// change the icon of the save button from a circle to a check mark when the user saves an event to the local storage
+const saveBtns = document.querySelectorAll(".saveBtn");
 
-  // save to local here
-  if (!userTasks[inputGroupID]) {
-    userTasks[inputGroupID] = {
-      time: time,
-      task: userInput,
-    };
-  } else {
-    userTasks[inputGroupID].time = time;
-    userTasks[inputGroupID].task = task;
+saveBtns.forEach((saveBtn) => {
+  const textarea = saveBtn.parentElement.querySelector(".form-control");
+  const icon = saveBtn.querySelector("i");
+
+  saveBtn.addEventListener("click", () => {
+    const inputValue = textarea.value.trim();
+
+    if (inputValue !== "") {
+      // Save the input value to local storage
+      localStorage.setItem(textarea.id, inputValue);
+      icon.classList.remove("fa-circle");
+      icon.classList.add("fa-check");
+    }
+  });
+});
+
+// sets data to the val of teh textarea, so that these values can be retrieved from local storage
+const textareaIds = [
+  "hour09",
+  "hour10",
+  "hour11",
+  "hour12",
+  "hour13",
+  "hour14",
+  "hour15",
+  "hour16",
+  "hour17",
+];
+
+textareaIds.forEach((textareaId) => {
+  const textarea = document.querySelector(`#${textareaId} .form-control`);
+  const icon = document.querySelector(`#${textareaId} .saveBtn i`);
+
+  const savedValue = localStorage.getItem(textareaId);
+
+  if (savedValue) {
+    textarea.value = savedValue;
+    icon.classList.remove("fa-circle");
+    icon.classList.add("fa-check");
   }
-  localStorage.setItem("userTasks", JSON.stringify(userTasks));
 });
 
-//     //  Button function to clear local storage and clear contents let saveBtn = document.querySelectorAll(".saveBtn"); console.log(currentHour);
+//  Button function to clear local storage and clear contents
 $("#clearFieldsBtn").click(function (event) {
-  event.preventDefault;
+  event.preventDefault();
   $("textarea").val("");
+  localStorage.clear();
 });
-
-
-
-// // Select all hour-ids equal to the hours in allHours array and saves them in $timeBlock. Check if current time matches the hour in the hourMoment object and add a class to the next element of $timeBlock. The class "present" is added if the current time matches the hour, "past" is added if the current time is before the hour and "future" is added if the current time is after the hour.
-
-// function timeComparison() {
-
-//   let currentTime = moment().hour();
-
-// $.each(allHours, function () {
-//   let hourId = parseInt(this);
-//   let hourMoment = moment().hour(hourId);
-//   let $timeBlock = $(`[hour-id=${hourId}]`);
-//   if (hourMoment.isSame(currentTime, 'hour')) {
-//     $timeBlock.next().addClass("present");
-//   } else if (hourMoment.isBefore(currentTime, 'hour')) {
-//     $timeBlock.next().addClass("past");
-//   } else if (hourMoment.isAfter(currentTime, 'hour')) {
-//     $timeBlock.next().addClass("future");
-//   }
-// });
-// }
-
-// // Get sceduled item from local storage, if any
-//  $("#hour09 .description").val(localStorage.getItem("09"));
-//  $("#hour10 .description").val(localStorage.getItem("10"));
-//  $("#hour11 .description").val(localStorage.getItem("11"));
-//  $("#hour12 .description").val(localStorage.getItem("12"));
-//  $("#hour13 .description").val(localStorage.getItem("13"));
-//  $("#hour14 .description").val(localStorage.getItem("14"));
-//  $("#hour15 .description").val(localStorage.getItem("15"));
-//  $("#hour16 .description").val(localStorage.getItem("16"));
-//  $("#hour17 .description").val(localStorage.getItem("17"));
-
-// //     //  Button function to clear local storage and clear contents
-//  let saveBtn = document.querySelectorAll(".saveBtn");
-//  console.log(currentHour);
-
-//      $("#clearFieldsBtn").click(function (event) {
-//         event.preventDefault;
-//         $("textarea").val("");
-//         localStorage.clear();
-
-//  )
