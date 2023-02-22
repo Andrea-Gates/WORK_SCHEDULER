@@ -25,7 +25,8 @@ function timeComparison() {
     let textarea = $(this).find("textarea");
     if (timeBlockHour < currentHour) {
       textarea.removeClass("present future").addClass("past");
-    } else if (timeBlockHour === currentHour) {
+    } else if (timeBlockHour == currentHour) {
+      console.log("Hello");
       textarea.removeClass("past future").addClass("present");
     } else {
       textarea.removeClass("present past").addClass("future");
@@ -33,27 +34,6 @@ function timeComparison() {
   });
 }
 timeComparison();
-
-// let now = moment();
-// let currentHour = now.hour();
-
-// let timeSlots = [
-//   { start_time: "10:00", color: "" },
-//   { start_time: "12:00", color: "" },
-//   { start_time: "14:00", color: "" },
-//   { start_time: "16:00", color: "" },
-// ];
-
-// for (let i = 0; i < timeSlots.length; i++) {
-//   let slotHour = moment(timeSlots[i].start_time, "HH:mm").hour();
-//   if ((slotHour = currentHour)) {
-//     timeSlots[i].color = "present";
-//   } else if (slotHour > currentHour) {
-//     timeSlots[i].color = "future";
-//   } else {
-//     timeSlots[i].color = "past";
-//   }
-// }
 
 // change the icon of the save button from a circle to a check mark when the user saves an event to the local storage
 const saveBtns = document.querySelectorAll(".saveBtn");
@@ -76,27 +56,29 @@ saveBtns.forEach((saveBtn) => {
 
 // sets data to the val of teh textarea, so that these values can be retrieved from local storage
 const textareaIds = [
-  "hour09",
-  "hour10",
-  "hour11",
-  "hour12",
-  "hour13",
-  "hour14",
-  "hour15",
-  "hour16",
-  "hour17",
+  "9AM",
+  "10AM",
+  "11AM",
+  "12PM",
+  "1PM",
+  "2PM",
+  "3PM",
+  "4PM",
+  "5PM",
 ];
 
 textareaIds.forEach((textareaId) => {
-  const textarea = document.querySelector(`#${textareaId} .form-control`);
-  const icon = document.querySelector(`#${textareaId} .saveBtn i`);
+  const textarea = document.getElementById(textareaId);
+  // const icon = document.querySelector(`#${textareaId} .saveBtn i`);
+  console.log(textarea);
+  // console.log(icon);
 
   const savedValue = localStorage.getItem(textareaId);
 
   if (savedValue) {
     textarea.value = savedValue;
-    icon.classList.remove("fa-circle");
-    icon.classList.add("fa-check");
+    // icon.classList.remove("fa-circle");
+    // icon.classList.add("fa-check");
   }
 });
 
